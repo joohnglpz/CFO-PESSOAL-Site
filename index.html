@@ -32,20 +32,26 @@
 
     .logo{
       text-align: center;
-      width: 300px;
-      height: 300px;
+      width: 250px;
+      height: 250px;
       border-radius: 50%;
      
     }
 
     /* ── TOPO ── */
     .top-bar {
-      background: var(--red);
+      background: linear-gradient(135deg, rgba(245,158,11,.2), rgba(220,38,38,.15));
       text-align: center;
-      padding: 10px 16px;
-      font-size: 0.85rem;
+      padding: 12px 16px;
+      font-size: 0.9rem;
       font-weight: 700;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      max-width: 920px;
+      margin: 0 auto 28px;
+      color: var(--primary);
+      border: 1px solid rgba(245,158,11,.35);
     }
 
     /* ── HERO ── */
@@ -79,16 +85,75 @@
     .hero h1 {
       font-size: clamp(2rem, 5vw, 3.4rem);
       font-weight: 900;
-      line-height: 1.15;
+      line-height: 1.1;
       max-width: 820px;
       margin: 0 auto 20px;
     }
     .hero h1 span { color: var(--primary); }
     .hero p.subtitle {
       font-size: clamp(1rem, 2vw, 1.2rem);
+      color: #cbd5e1;
+      max-width: 640px;
+      margin: 0 auto 36px;
+    }
+    .hero-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      max-width: 860px;
+      margin: 0 auto 28px;
+      flex-wrap: wrap;
+      padding: 0 16px;
+    }
+    .hero-brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .hero-brand img,
+    .hero-brand .logo {
+      width: 88px;
+      height: 88px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      object-fit: cover;
+    }
+    .hero-brand-text {
+      text-align: left;
+    }
+    .hero-brand-text p {
+      margin: 0;
+      line-height: 1.4;
+    }
+    .hero-brand-text .brand-name {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .hero-brand-text .brand-subtitle {
+      font-size: 0.9rem;
       color: #94a3b8;
-      max-width: 600px;
-      margin: 0 auto 40px;
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.18);
+      color: var(--white);
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      box-shadow: inset 0 0 0 1px rgba(245,158,11,.05);
     }
 
     /* ── VSL placeholder ── */
@@ -176,43 +241,171 @@
       margin: 0 auto 48px;
     }
 
+    /* ── CFO PESSOAL — O QUE É? ── */
+    .cfo {
+      background: linear-gradient(180deg, #11203a 0%, #07101d 100%);
+      border: 1px solid rgba(245,158,11,.12);
+      border-radius: 24px;
+      padding: 42px 28px;
+      margin-bottom: 40px;
+      box-shadow: 0 20px 50px rgba(2,6,23,.28);
+    }
+    .cfo .cfo-grid {
+      display: grid;
+      grid-template-columns: minmax(220px, 1.4fr) minmax(220px, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+    .cfo .cfo-label { text-transform: uppercase; letter-spacing: .16em; color: var(--primary); font-weight: 800; font-size: .75rem; margin-bottom: 14px; }
+    .cfo h2 { margin: 0 0 18px; font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.08; }
+    .cfo p { color: #cbd5e1; font-size: 1rem; line-height: 1.75; margin: 0 0 22px; }
+    .cfo strong { color: var(--white); }
+    .cfo-features {
+      display: grid;
+      gap: 14px;
+    }
+    .cfo-feature {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 16px;
+      padding: 18px 18px;
+    }
+    .cfo-feature-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: rgba(245,158,11,.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .cfo-feature strong { display: block; color: var(--white); margin-bottom: 6px; font-size: .95rem; }
+    .cfo-feature span { color: #94a3b8; font-size: .92rem; line-height: 1.5; }
+    .cfo-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: var(--dark);
+      font-weight: 800;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      margin-top: 10px;
+      box-shadow: 0 10px 28px rgba(245,158,11,.2);
+    }
+    @media (max-width: 860px) {
+      .cfo { padding: 32px 22px; }
+      .cfo .cfo-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── PROBLEMA / DOR ── */
     .pain { background: #070e31; }
-    .pain-list {
+    .pain-enhanced {
       display: grid;
-      gap: 16px;
+      gap: 18px;
       margin-bottom: 48px;
     }
-    .pain-item {
+    .pain-intro {
       display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      background: rgba(7, 173, 250, 0.199);
-      border: 1px solid rgba(220,38,38,.2);
-      border-radius: var(--radius);
-      padding: 18px 20px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
     }
-    .pain-icon { font-size: 1.4rem; flex-shrink: 0; }
-    .pain-item p { font-size: .95rem; color: #cbd5e1; }
+    .pain-intro .lead {
+      max-width: 720px;
+      color: #cbd5e1;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .pain-badge {
+      background: linear-gradient(90deg,var(--primary),var(--primary-dark));
+      color: var(--dark);
+      font-weight: 800;
+      padding: 8px 12px;
+      border-radius: 999px;
+      box-shadow: 0 8px 28px rgba(217,119,6,.12);
+      white-space: nowrap;
+    }
 
-    /* ── SOLUÇÃO ── */
-    .solution { background: linear-gradient(180deg, #2d5e82 0%, #0f172a 100%); }
-    .solution-grid {
+    .pain-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-      margin-bottom: 48px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
     }
-    .solution-card {
+    .pain-card {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 18px 18px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
+      border-left: 4px solid rgba(245,158,11,.06);
+      transition: transform .15s, box-shadow .15s;
+    }
+    .pain-card:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(2,6,23,.45); }
+    .pain-icon { font-size: 1.6rem; flex-shrink: 0; width:36px; height:36px; display:flex; align-items:center; justify-content:center; border-radius:10px; background: rgba(255,255,255,.03); color: var(--primary); font-weight:800; }
+    .pain-card .title { font-weight:800; color: var(--white); margin-bottom:6px; font-size:.98rem; }
+    .pain-card p { margin:0; color:#cbd5e1; font-size:.92rem; line-height:1.45 }
+    .kwd { color: var(--primary); font-weight:900; }
+    .highlight { background: linear-gradient(90deg, rgba(245,158,11,.12), transparent); padding: 4px 6px; border-radius:6px; }
+    @media (max-width:600px){ .pain-intro{flex-direction:column;align-items:flex-start} }
+
+    /* ── BONUS INCLUSO ── */
+    .bonus { background: linear-gradient(180deg, #2d5e82 0%, #0f172a 100%); }
+    .bonus .section-label { color: #fcd34d; }
+    .bonus-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 36px;
+    }
+    .bonus-item {
       background: rgba(255,255,255,.04);
-      border: 1px solid rgba(245,158,11,.15);
-      border-radius: var(--radius);
-      padding: 28px 22px;
-      text-align: center;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-height: 220px;
     }
-    .solution-card .icon { font-size: 2.2rem; margin-bottom: 14px; }
-    .solution-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
-    .solution-card p { font-size: .88rem; color: #94a3b8; }
+    .bonus-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+    .bonus-image {
+      flex: 1;
+      background: rgba(255,255,255,.06);
+      border: 1px dashed rgba(255,255,255,.12);
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      color: #94a3b8;
+      font-size: .95rem;
+      text-align: center;
+      padding: 18px;
+      overflow: hidden;
+    }
+    .bonus-image img {
+      width: 100%;
+      height: auto;
+      max-height: 240px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+    }
+    @media (max-width: 680px) {
+      .bonus-item { min-height: 180px; }
+    }
 
     /* ── JANELA DE OPORTUNIDADE ── */
     .opportunity { background: linear-gradient(180deg, #0f172a 0%, #2d5e82 100%); }
@@ -309,17 +502,65 @@
     .testimonial-author span { font-size: .75rem; color: #64748b; }
 
     /* ── CONTAGEM REGRESSIVA ── */
-    .urgency { background: #e78f0c91; text-align: center; padding: 60px 16px; }
-    .countdown { display: flex; justify-content: center; gap: 16px; margin: 24px 0 32px; }
-    .count-block {
-      background: var(--dark);
-      border: 1px solid rgba(245,158,11,.3);
-      border-radius: var(--radius);
-      padding: 18px 22px;
-      min-width: 80px;
+    .urgency {
+      background: linear-gradient(135deg, rgba(245,158,11,.16), rgba(15,23,42,.96));
+      text-align: center;
+      padding: 80px 16px;
+      position: relative;
+      overflow: hidden;
     }
-    .count-block .num { font-size: 2.2rem; font-weight: 900; color: var(--primary); line-height: 1; }
-    .count-block .lbl { font-size: .7rem; color: #64748b; margin-top: 4px; }
+    .urgency::before {
+      content: '';
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: rgba(245,158,11,.12);
+      top: -80px;
+      right: -80px;
+      filter: blur(30px);
+      pointer-events: none;
+    }
+    .urgency::after {
+      content: '';
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.05);
+      bottom: -60px;
+      left: -40px;
+      filter: blur(18px);
+      pointer-events: none;
+    }
+    .urgency .container { position: relative; z-index: 1; }
+    .urgency .section-label { color: #fcd34d; letter-spacing: .16em; }
+    .urgency h2.section-title { color: var(--white); margin-bottom: 14px; }
+    .urgency p { color: #cbd5e1; max-width: 760px; margin: 0 auto 16px; }
+    .urgency .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(90px, 1fr));
+      gap: 18px;
+      justify-items: center;
+      margin: 28px auto 32px;
+      max-width: 760px;
+    }
+    .count-block {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      padding: 24px 18px;
+      min-width: 100px;
+      box-shadow: 0 18px 45px rgba(15,23,42,.18);
+    }
+    .count-block .num { font-size: 2.2rem; font-weight: 900; color: var(--primary); line-height: 1; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace; }
+    .count-block .lbl { font-size: .78rem; color: #94a3b8; margin-top: 8px; text-transform: uppercase; letter-spacing: .12em; }
+    .urgency .btn-cta { padding: 18px 42px; font-size: 1rem; }
+    .urgency .guarantee-line { color: #94a3b8; margin-top: 18px; }
+
+    @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); } }
+    .count-block.urgent { background: linear-gradient(90deg,var(--primary),var(--primary-dark)); border-color: rgba(0,0,0,.06); color: #071125; box-shadow: 0 20px 50px rgba(217,119,6,.18); animation: pulse 1.2s ease-in-out infinite; }
+    .btn-cta.urgent-cta { box-shadow: 0 12px 44px rgba(217,119,6,.4); transform: translateY(-1px); }
 
     /* ── OFERTA PRINCIPAL ── */
     .offer { background: #070e31; }
@@ -481,90 +722,83 @@
     footer a { color: #475569; text-decoration: none; }
     footer a:hover { color: #64748b; }
 
-    /* ── POPUP DE SAÍDA / DESCONTO ── */
+    /* ── POPUP DE SAÍDA / DESCONTO (APERFEIÇOADO) ── */
     #popup-overlay {
       position: fixed; inset: 0;
-      background: rgba(0,0,0,.85);
+      background: rgba(0,0,0,.6);
       z-index: 9000;
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 16px;
+      padding: 24px;
       backdrop-filter: blur(4px);
     }
-    #popup-overlay.active { display: flex; }
+    #popup-overlay[aria-hidden="false"] { display: flex; }
+
     .popup-box {
-      background: linear-gradient(160deg, #1e1b4b, #0f172a);
-      border: 2px solid var(--primary);
-      border-radius: 20px;
-      padding: 40px 32px;
-      max-width: 500px;
+      background: linear-gradient(160deg, #151428 0%, #0f172a 100%);
+      border: 1px solid rgba(245,158,11,.14);
+      border-radius: 16px;
+      padding: 28px;
+      max-width: 800px;
       width: 100%;
-      text-align: center;
+      color: #e6eef8;
       position: relative;
-      animation: popIn .3s ease;
+      animation: popIn .28s cubic-bezier(.2,.9,.2,1);
+      box-shadow: 0 30px 80px rgba(2,6,23,.6);
+      display: grid;
+      grid-template-columns: 1.2fr minmax(240px, 280px);
+      gap: 24px;
+      align-items: center;
     }
-    @keyframes popIn { from { transform: scale(.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    @keyframes popIn { from { transform: translateY(8px) scale(.98); opacity: 0; } to { transform: translateY(0) scale(1); opacity: 1; } }
+
     .popup-close {
-      position: absolute; top: 14px; right: 18px;
-      font-size: 1.4rem; cursor: pointer; color: #475569;
-      background: none; border: none; line-height: 1;
+      position: absolute; top: 12px; right: 14px;
+      font-size: 1.2rem; cursor: pointer; color: #94a3b8;
+      background: none; border: none; line-height: 1; padding:6px;
     }
-    .popup-close:hover { color: #94a3b8; }
-    .popup-tag {
-      background: var(--red);
-      color: var(--white);
-      font-size: .72rem; font-weight: 800; letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: 5px 16px; border-radius: 100px;
-      display: inline-block; margin-bottom: 18px;
+    .popup-close:hover { color: #ffffff; }
+
+    .popup-savings {
+      position: absolute; left: 16px; top: -12px;
+      background: linear-gradient(90deg,var(--primary),var(--primary-dark));
+      color: var(--dark); font-weight: 800; padding: 6px 12px; border-radius: 999px; box-shadow: 0 6px 20px rgba(217,119,6,.12);
     }
-    .popup-box h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 10px; line-height: 1.25; }
-    .popup-box h3 span { color: var(--primary); }
-    .popup-box > p { font-size: .9rem; color: #94a3b8; margin-bottom: 24px; }
-    .popup-price-wrap { margin-bottom: 24px; }
-    .popup-price-from { font-size: .85rem; color: #475569; margin-bottom: 4px; }
-    .popup-price-from s { color: #475569; }
-    .popup-main-price { font-size: 2.8rem; font-weight: 900; color: var(--primary); line-height: 1; }
-    .popup-main-price sup { font-size: 1.2rem; vertical-align: top; margin-top: 8px; display: inline-block; }
-    .popup-timer { font-size: .8rem; color: var(--red); font-weight: 700; margin-top: 8px; }
-    #popup-countdown { font-weight: 900; }
-    .popup-items {
-      list-style: none;
-      text-align: left;
-      margin: 0 0 24px;
-      display: flex; flex-direction: column; gap: 8px;
+
+    .popup-body { padding: 8px 6px 8px 6px; }
+    .popup-left { display:flex; flex-direction:column; gap:12px; justify-content:center; align-items:flex-start; }
+    .popup-left h3 { margin:0; font-size:1.35rem; line-height:1.1; color:var(--white); }
+    .popup-left p { color:#cbd5e1; margin:0; }
+
+    .popup-right { background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)); border-radius:12px; padding:24px; display:flex; flex-direction:column; gap:12px; align-items:center; justify-content:center; }
+    .popup-price-from { font-size: .92rem; color: #94a3b8; margin-bottom: 4px; }
+    .popup-main-price { font-size: 3.4rem; font-weight: 900; color: var(--primary); line-height:1; }
+    .popup-main-price sup { font-size: 1.4rem; vertical-align: top; margin-top: 6px; display: inline-block; }
+    .popup-save { font-size:.85rem; color:#d1fae5; background:var(--green); color:var(--dark); padding:4px 8px; border-radius:8px; font-weight:800; }
+
+    .popup-timer { font-size: .92rem; color: #ffedd5; font-weight: 800; }
+    .popup-progress { width:100%; height:8px; background: rgba(255,255,255,.04); border-radius:8px; overflow:hidden; }
+    .popup-progress .bar { height:100%; width:100%; background: linear-gradient(90deg,var(--primary),var(--primary-dark)); transition:width 1s linear; }
+
+    .popup-items { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+    .popup-items li { display:flex; gap:10px; align-items:flex-start; color:#cbd5e1; font-size:.95rem; }
+    .popup-items li::before { content:'✓'; color:var(--green); font-weight:900; min-width:20px; }
+
+    .btn-popup-cta { display:inline-block; background: linear-gradient(135deg, #f59e0b, #d97706); color: #071125; font-weight:900; padding:12px 20px; border-radius:999px; text-decoration:none; box-shadow:0 8px 30px rgba(245,158,11,.18); }
+    .btn-popup-secondary { background: transparent; color:#94a3b8; border:1px solid rgba(255,255,255,.04); padding:10px 14px; border-radius:8px; text-decoration:none; }
+
+    @media (max-width:880px){ 
+      .popup-box {
+        grid-template-columns: 1fr; 
+        padding: 24px;
+      }
+      .popup-right {
+        order: -1;
+        padding: 20px;
+      }
+      .popup-savings { left: 12px; top: -10px; }
     }
-    .popup-items li { display: flex; align-items: center; gap: 8px; font-size: .85rem; color: #cbd5e1; }
-    .popup-items li::before {
-      content: '✓';
-      background: var(--green);
-      color: var(--white);
-      width: 18px; height: 18px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: .65rem; font-weight: 800; flex-shrink: 0;
-    }
-    .btn-popup-cta {
-      display: block;
-      background: linear-gradient(135deg, #f59e0b, #d97706);
-      color: var(--dark);
-      font-size: 1rem; font-weight: 800;
-      padding: 16px 32px;
-      border-radius: 100px;
-      text-decoration: none; border: none; cursor: pointer;
-      box-shadow: 0 6px 24px rgba(245,158,11,.4);
-      transition: transform .15s, box-shadow .15s;
-      width: 100%;
-    }
-    .btn-popup-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(245,158,11,.55); }
-    .popup-no {
-      margin-top: 14px;
-      font-size: .78rem; color: #475569;
-      cursor: pointer; text-decoration: underline;
-      background: none; border: none; width: 100%;
-    }
-    .popup-no:hover { color: #64748b; }
 
     /* ── STICKY CTA ── */
     #sticky-cta {
@@ -594,8 +828,26 @@
 
     @media (max-width: 480px) {
       .offer-box { padding: 36px 20px; }
-      .popup-box { padding: 32px 20px; }
+      .popup-box { 
+        padding: 24px 16px; 
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .popup-right { padding: 16px; }
       #sticky-cta { flex-direction: column; gap: 10px; text-align: center; }
+    }
+
+    .button-bonus{
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: var(--dark);
+      font-weight: 800;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      margin-top: 10px;
+      box-shadow: 0 10px 28px rgba(245,158,11,.2);
+      border: none;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -605,20 +857,28 @@
   TOPO — BARRA DE URGÊNCIA
 ════════════════════════════════════════════ -->
 <div class="top-bar">
-  🤖 LANÇAMENTO — Aprenda a usar IA para organizar suas finanças por apenas R$9,90!
+  🤖 Lançamento: CFO Pessoal Automatizado com IA — resultado real por apenas R$9,90
 </div>
 
 <!-- ═══════════════════════════════════════════
   HERO
 ════════════════════════════════════════════ -->
 <section class="hero">
-   <img class="logo" src="logo.png" alt="logo"> <p style="font-family: 'Inter', sans-serif;"><b>J&J Treinamentos</b></p><br>
-  
-  <div class="badge">E-book · ChatGPT + Claude + Gemini</div>
-  <h1>Como a <span>Inteligência Artificial</span> está Revolucionando o Mercado Financeiro - <br>
-     E Como Você Pode Usar Isso a Seu Favor!</h1>
+  <div class="hero-top">
+    <div class="hero-brand">
+      <img class="logo" src="logo.png" alt="J&J Treinamentos">
+      <div class="hero-brand-text">
+        <p class="brand-name">J&J Treinamentos</p>
+        <p class="brand-subtitle">IA aplicada às suas finanças pessoais</p>
+      </div>
+    </div>
+    <div class="hero-pill">E-book prático com ChatGPT, Claude e Gemini</div>
+  </div>
+
+  <div class="badge">Lançamento Exclusivo</div>
+  <h1>CFO Pessoal - O Consultor Financeiro Automatizado com IA</h1>
   <p class="subtitle">
-    O e-book que revela como as ferramentas de IA estão mudando as finanças pessoais e como qualquer pessoa pode usá-las hoje mesmo para organizar o dinheiro, sair das dívidas e investir melhor.
+    O consultor financeiro pessoal equipado com IA que vai automatizar as suas finanças do dia a dia em poucos passos.
   </p>
 
   <!-- VSL placeholder -->
@@ -643,57 +903,71 @@
   </p>
 </section>
 
-<!-- ═══════════════════════════════════════════
-  PROBLEMA — IDENTIFICAÇÃO DA DOR
-════════════════════════════════════════════ -->
-<section class="pain">
-  <div class="container">
-    <p class="section-label">Você se identifica?</p>
-    <h2 class="section-title">Seu dinheiro some e você não sabe <span>para onde vai?</span></h2>
-    <p class="section-sub">Se qualquer uma das situações abaixo soa familiar, você está no lugar certo.</p>
-
-    <div class="pain-list">
-      <div class="pain-item"><span class="pain-icon">💸</span><p>Você chega no fim do mês sem dinheiro e não consegue explicar onde gastou tudo.</p></div>
-      <div class="pain-item"><span class="pain-icon">📊</span><p>Já tentou criar planilhas de controle financeiro, mas abandonou em menos de duas semanas.</p></div>
-      <div class="pain-item"><span class="pain-icon">💳</span><p>As dívidas foram se acumulando e agora parecem grandes demais para resolver — você nem sabe por onde começar.</p></div>
-      <div class="pain-item"><span class="pain-icon">🏦</span><p>Sabe que deveria guardar dinheiro, mas no fim do mês nunca sobra nada para poupar ou investir.</p></div>
-      <div class="pain-item"><span class="pain-icon">🤯</span><p>Já baixou dezenas de apps de finanças que prometiam organizar tudo, mas nenhum resolveu de verdade.</p></div>
+<section class="cfo">
+  <div class="container cfo-grid">
+    <div>
+      <p class="cfo-label">O que é o CFO Pessoal?</p>
+      <h2>A inteligência artificial que organiza seu dinheiro de verdade</h2>
+      <p>O CFO Pessoal é o método que transforma IA em seu assistente financeiro diário. Em minutos, você identifica gastos invisíveis, prioriza dívidas e monta um plano com ações reais para equilibrar seu orçamento.</p>
+      <a href="upsell.html" class="cfo-cta">Quero ativar meu CFO Pessoal</a>
+    </div>
+    <div class="cfo-features">
+      <div class="cfo-feature">
+        <div class="cfo-feature-icon">🤖</div>
+        <div><strong>Leitura inteligente dos seus números</strong><span>Use ChatGPT, Claude e Gemini para mapear suas despesas, receitas e hábitos sem esforço.</span></div>
+      </div>
+      <div class="cfo-feature">
+        <div class="cfo-feature-icon">⚡</div>
+        <div><strong>Recomendações práticas na hora</strong><span>Receba ações simples para cortar gastos, equilibrar o orçamento e recuperar controle financeiro.</span></div>
+      </div>
+      <div class="cfo-feature">
+        <div class="cfo-feature-icon">📈</div>
+        <div><strong>Plano financeiro claro</strong><span>Construa um roteiro passo a passo para quitar dívidas, começar a poupar e proteger seu futuro.</span></div>
+      </div>
+      <div class="cfo-feature">
+        <div class="cfo-feature-icon">🔐</div>
+        <div><strong>Seguro e fácil de usar</strong><span>Prompts prontos e estratégia inteligente para você aplicar sem depender de consultor caro.</span></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════
-  SOLUÇÃO
+  BÔNUS INCLUSO
 ════════════════════════════════════════════ -->
-<section class="solution">
+<section class="bonus">
   <div class="container">
-    <p class="section-label">A solução definitiva</p>
-    <h2 class="section-title">Apresentamos o <span>Finanças com IA</span></h2>
-    <p class="section-sub">O guia prático que te ensina a usar ChatGPT, Claude e outras ferramentas de IA como seu consultor financeiro pessoal — disponível 24h por dia, no seu bolso.</p>
+    <p class="section-label">Bônus exclusivo</p>
+    <button class="button-bonus">
+    <h2 class="section-title">Coleção completa de automação com IA</h2>
+    </button>
+    <p class="section-sub">Além do método principal, você recebe um pacote completo de e-books com exemplos práticos, prompts e estratégias para usar IA em finanças, investimentos e automação pessoal.</p>
 
-    <div class="solution-grid">
-      <div class="solution-card">
-        <div class="icon">🤖</div>
-        <h3>IA como Consultor Financeiro</h3>
-        <p>Use o ChatGPT e Claude para analisar seus gastos, identificar desperdícios e criar um plano personalizado para você.</p>
+    <div class="bonus-list">
+      <div class="bonus-item">
+        <div class="bonus-title">Ebook 1 - IA & Finanças: O Novo Jogo do Dinheiro</div>
+        <div class="bonus-image"><img src="img/ebook1.jpg" alt="Capa do Ebook 1" srcset=""></div>
       </div>
-      <div class="solution-card">
-        <div class="icon">⚡</div>
-        <h3>Prompts Prontos para Usar</h3>
-        <p>Receba comandos já testados para pedir à IA exatamente o que você precisa — sem precisar saber nada de tecnologia.</p>
+      <div class="bonus-item">
+        <div class="bonus-title">Ebook 2 - Automação Financeira com IA</div>
+        <div class="bonus-image"><img src="img/ebook2.jpg" alt="Capa do Ebook 2" srcset=""></div>
       </div>
-      <div class="solution-card">
-        <div class="icon">📱</div>
-        <h3>Ferramentas 100% Gratuitas</h3>
-        <p>Tudo que você vai usar é gratuito. ChatGPT, Claude e Gemini têm versões free que funcionam perfeitamente.</p>
+      <div class="bonus-item">
+        <div class="bonus-title">Ebook 3 - Investimentos inteligentes com IA</div>
+        <div class="bonus-image"><img src="img/ebook3.jpg" alt="Capa do Ebook 3" srcset=""></div>
       </div>
-    </div>
-
-    <div style="text-align:center">
-      <a href="upsell.html" class="btn-cta">
-        SIM! QUERO ORGANIZAR MINHAS FINANÇAS
-        <small>Acesso imediato por R$9,90</small>
-      </a>
+      <div class="bonus-item">
+        <div class="bonus-title">Ebook 4 - IA Para Empreendedores Financeiros</div>
+        <div class="bonus-image"><img src="img/ebook4.jpg" alt="Capa do Ebook 4" srcset=""></div>
+      </div>
+      <div class="bonus-item">
+        <div class="bonus-title">Ebook 5 - Proteção Patrimonial com IA</div>
+        <div class="bonus-image"><img src="img/ebook5.jpg" alt="Capa do Ebook 5" srcset=""></div>
+      </div>
+      <div class="bonus-item">
+        <div class="bonus-title">Ebook 6 - O Futuro das Finanças com IA</div>
+        <div class="bonus-image"><img src="img/ebook6.jpg" alt="Capa do Ebook 6" srcset=""></div>
+      </div>
     </div>
   </div>
 </section>
@@ -727,7 +1001,7 @@
     <div class="modules">
       <div class="module"><div class="module-num">01</div><div class="module-info"><strong>Diagnóstico Financeiro Automatizado:</strong><span>Aprenda a usar o ChatGPT e o Claude para mapear sua situação financeira atual, identificar gargalos e criar metas reais em menos de 10 minutos</span></div></div>
       <div class="module"><div class="module-num">02</div><div class="module-info"><strong>Auditoria de Gastos Invisíveis:</strong><span>Descubra como usar a IA para "escanear" suas faturas e encontrar assinaturas esquecidas ou cobranças indevidas, gerando economia imediata.</span></div></div>
-      <div class="module"><div class="module-num">03</div><div class="module-info"><strong>Acesso às Ferramentas de Elite:</strong><span>m guia curado com as melhores plataformas de IA (gratuitas e pagas) que os grandes investidores usam para prever tendências de mercado</span></div></div>
+      <div class="module"><div class="module-num">03</div><div class="module-info"><strong>Acesso às Ferramentas de Elite:</strong><span>Guia curado com as melhores plataformas de IA (gratuitas e pagas) que os grandes investidores usam para prever tendências de mercado</span></div></div>
       <div class="module"><div class="module-num">04</div><div class="module-info"><strong>Plano para Sair das Dívidas</strong><span>A IA cria um cronograma realista de quitação de dívidas adaptado à sua renda</span></div></div>
       <div class="module"><div class="module-num">05</div><div class="module-info"><strong>Metas de Poupança e Investimento</strong><span>Defina objetivos financeiros e peça à IA para traçar o caminho até eles</span></div></div>
       <div class="module"><div class="module-num">06</div><div class="module-info"><strong>Bônus: Pack com 6 Ebooks financeiros</strong><span>Como aplicar IA em diversas áreas do conhecimento</span></div></div>
@@ -781,11 +1055,13 @@
     <p class="section-label">⚠️ Atenção</p>
     <h2 class="section-title">Essa oferta <span>expira em breve</span></h2>
     <p style="color:#94a3b8;margin-bottom:0">O preço de R$9,90 é válido apenas durante este período:</p>
-    <div class="countdown">
-      <div class="count-block"><div class="num" id="hours">02</div><div class="lbl">HORAS</div></div>
-      <div class="count-block"><div class="num" id="minutes">47</div><div class="lbl">MIN</div></div>
-      <div class="count-block"><div class="num" id="seconds">59</div><div class="lbl">SEG</div></div>
+    <div class="countdown" role="group" aria-label="Contagem regressiva para oferta">
+      <div class="count-block"><div class="num" id="days">02</div><div class="lbl">DIAS</div></div>
+      <div class="count-block"><div class="num" id="hours">00</div><div class="lbl">HORAS</div></div>
+      <div class="count-block"><div class="num" id="minutes">00</div><div class="lbl">MINUTOS</div></div>
+      <div class="count-block"><div class="num" id="seconds">00</div><div class="lbl">SEGUNDOS</div></div>
     </div>
+    <div id="countdown-live" aria-live="polite" style="margin-top:10px;color:#94a3b8"></div>
     <a href="upsell.html" class="btn-cta">
       GARANTIR MEU ACESSO AGORA — R$9,90
       <small>Antes que o preço aumente</small>
@@ -949,35 +1225,40 @@
 <!-- ═══════════════════════════════════════════
   POPUP DE DESCONTO (saída / botão fechar)
 ════════════════════════════════════════════ -->
-<div id="popup-overlay">
-  <div class="popup-box">
-    <button class="popup-close" id="popup-close-btn" aria-label="Fechar">✕</button>
+<div id="popup-overlay" aria-hidden="true">
+  <div class="popup-box" role="dialog" aria-modal="true" aria-labelledby="popup-title" aria-describedby="popup-desc">
+    <button class="popup-close" id="popup-close-btn" aria-label="Fechar diálogo">✕</button>
+    <div class="popup-savings">Economize R$5,00</div>
 
-    <div class="popup-tag">🚨 Oferta de Última Chance</div>
-    <h3>Espera! Leve a <span>Edição Completa</span> com desconto exclusivo</h3>
-    <p>Você está prestes a sair com apenas 1 e-book. Aproveite este momento para garantir todos os 6 e-books por um preço especial que não vai voltar.</p>
+    <div class="popup-body">
+      <div class="popup-left">
+        <h3 id="popup-title">Espera! Leve a <span>Edição Completa</span> com desconto exclusivo</h3>
+        <p id="popup-desc">Você está prestes a sair com apenas 1 e-book. Aproveite este momento para garantir todos os 6 e-books com desconto por tempo limitado.</p>
 
-    <div class="popup-price-wrap">
-      <div class="popup-price-from">Edição Completa (6 e-books) — de <s>R$97,00</s> · antes <s>R$24,90</s></div>
-      <div class="popup-main-price"><sup>R$</sup>19,90</div>
-      <div class="popup-timer">⏰ Esta oferta expira em: <span id="popup-countdown">10:00</span></div>
+        <ul class="popup-items">
+          <li><strong>CFO Pessoal com IA</strong> — Acesso vitalício e guias práticos</li>
+          <li><strong>Agente financeiro automatizado</strong> para seu dia a dia</li>
+          <li><strong>6 e-books bônus</strong> com estratégias aplicáveis agora</li>
+          <li><strong>Atualizações vitalícias</strong> conforme a IA evolui</li>
+        </ul>
+
+        <p style="margin-top:6px;color:#94a3b8;font-size:.88rem">🔒 7 dias de garantia · Pagamento seguro</p>
+      </div>
+
+      <div class="popup-right" aria-hidden="false">
+        <div class="popup-price-from">De <s>R$97,00</s> · Antes <s>R$24,90</s></div>
+        <div class="popup-main-price"><sup>R$</sup>19<sub>,90</sub></div>
+        <div class="popup-save">Oferta exclusiva</div>
+
+        <div style="width:100%;margin-top:8px;text-align:center">
+          <div class="popup-timer">⏰ Oferta expira em <span id="popup-countdown">10:00</span></div>
+          <div class="popup-progress" aria-hidden="true" style="margin-top:10px"><div class="bar" id="popup-bar" style="width:100%"></div></div>
+        </div>
+
+        <a id="popup-cta" href="https://pay.cakto.com.br/35e5nnw_870678" class="btn-popup-cta" style="margin-top:12px">SIM! QUERO OS 6 E-BOOKS — R$19,90</a>
+        <a id="popup-decline" class="btn-popup-secondary" style="margin-top:8px;display:inline-block">Continuar sem o desconto</a>
+      </div>
     </div>
-
-    <ul class="popup-items">
-      <li>E-book 1: E-book 1: IA & Finanças: O novo jogo do dinheiro</li>
-      <li>E-book 2: Automação Financeira com Inteligência Artificial</li>
-      <li>E-book 3: Investimentos Inteligêntes com Inteligência Artificial</li>
-      <li>E-book 4: IA Para Empreendedores Financeiros</li>
-      <li>E-book 5: Proteção Patrimonial com Inteligência Artificial</li>
-      <li>E-book 6: O Futuro das Finanças com Inteligência Artificial</li>
-    </ul>
-
-    <a href="https://pay.cakto.com.br/35e5nnw_870678" class="btn-popup-cta">
-      SIM! QUERO OS 6 E-BOOKS POR R$19,90 →
-    </a>
-    <button class="popup-no" id="popup-decline">
-      Não, prefiro continuar sem organizar minhas finanças.
-    </button>
   </div>
 </div>
 
@@ -998,16 +1279,40 @@
 <script>
   /* ── Contagem regressiva principal ── */
   (function () {
-    const endTime = Date.now() + (2 * 60 * 60 + 47 * 60 + 59) * 1000;
+    // Prazo da oferta: 2 dias (48 horas) a partir do carregamento da página
+    const endTime = Date.now() + 2 * 24 * 60 * 60 * 1000;
     function pad(n) { return String(n).padStart(2, '0'); }
     function tick() {
       const diff = Math.max(0, endTime - Date.now());
-      const h = Math.floor(diff / 3600000);
-      const m = Math.floor((diff % 3600000) / 60000);
-      const s = Math.floor((diff % 60000) / 1000);
-      document.getElementById('hours').textContent = pad(h);
-      document.getElementById('minutes').textContent = pad(m);
-      document.getElementById('seconds').textContent = pad(s);
+      const days = Math.floor(diff / (24 * 3600000));
+      const rem = diff % (24 * 3600000);
+      const h = Math.floor(rem / 3600000);
+      const m = Math.floor((rem % 3600000) / 60000);
+      const s = Math.floor((rem % 60000) / 1000);
+
+      const daysEl = document.getElementById('days');
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+      if (daysEl) daysEl.textContent = pad(days);
+      if (hoursEl) hoursEl.textContent = pad(h);
+      if (minutesEl) minutesEl.textContent = pad(m);
+      if (secondsEl) secondsEl.textContent = pad(s);
+
+      // update aria-live region (for screen readers)
+      const live = document.getElementById('countdown-live');
+      if (live) live.textContent = `Faltam ${pad(days)} dias, ${pad(h)}:${pad(m)}:${pad(s)} para o fim da oferta`;
+
+      // highlight urgency when less than 1 hour remains
+      const blocks = document.querySelectorAll('.count-block');
+      if (diff > 0 && diff <= 3600000) {
+        blocks.forEach(b => b.classList.add('urgent'));
+        document.querySelectorAll('.btn-cta, .btn-sticky').forEach(el => el.classList.add('urgent-cta'));
+      } else {
+        blocks.forEach(b => b.classList.remove('urgent'));
+        document.querySelectorAll('.btn-cta, .btn-sticky').forEach(el => el.classList.remove('urgent-cta'));
+      }
+
       if (diff > 0) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
@@ -1040,60 +1345,87 @@
     });
   })();
 
-  /* ── Popup de desconto ── */
+  /* ── Popup de desconto (aprimorado) ── */
   (function () {
     const overlay = document.getElementById('popup-overlay');
     const closeBtn = document.getElementById('popup-close-btn');
     const declineBtn = document.getElementById('popup-decline');
-    let popupShown = false;
-    let popupTimerInterval = null;
+    const ctaBtn = document.getElementById('popup-cta');
+    const countdownEl = document.getElementById('popup-countdown');
+    const progressBar = document.getElementById('popup-bar');
 
-    function startPopupTimer() {
-      let remaining = 10 * 60;
-      const el = document.getElementById('popup-countdown');
-      function pad(n) { return String(n).padStart(2, '0'); }
-      function tick() {
-        const m = Math.floor(remaining / 60);
-        const s = remaining % 60;
-        el.textContent = pad(m) + ':' + pad(s);
-        if (remaining > 0) { remaining--; popupTimerInterval = setTimeout(tick, 1000); }
-        else { el.textContent = '00:00'; }
-      }
-      tick();
+    const TOTAL = 10 * 60; // 10 minutos
+    let remaining = TOTAL;
+    let timerId = null;
+    let shown = false;
+    let prevFocus = null;
+    const SESSION_KEY = 'promo_popup_dismissed_v1';
+
+    function formatTime(sec) { const m = Math.floor(sec / 60); const s = sec % 60; return String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0'); }
+    function updateProgress() { if (progressBar) progressBar.style.width = Math.max(0, (remaining / TOTAL) * 100) + '%'; }
+
+    function tick() {
+      if (!countdownEl) return;
+      countdownEl.textContent = formatTime(remaining);
+      updateProgress();
+      if (remaining > 0) { remaining--; timerId = setTimeout(tick, 1000); }
+      else { countdownEl.textContent = '00:00'; if (progressBar) progressBar.style.width = '0%'; }
+    }
+
+    function startTimer() { clearTimeout(timerId); remaining = TOTAL; tick(); }
+
+    function trapTabKey(e) {
+      if (e.key !== 'Tab') return;
+      const focusable = overlay.querySelectorAll('a[href], button, [tabindex]:not([tabindex="-1"])');
+      if (!focusable.length) return;
+      const nodes = Array.prototype.slice.call(focusable).filter(n => n.offsetParent !== null);
+      const first = nodes[0]; const last = nodes[nodes.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+
+    function onKeyDown(e) {
+      if (e.key === 'Escape') { hidePopup(true); }
+      else if (e.key === 'Tab') { trapTabKey(e); }
     }
 
     function showPopup() {
-      if (popupShown) return;
-      popupShown = true;
-      overlay.classList.add('active');
-      startPopupTimer();
+      if (shown) return;
+      if (sessionStorage.getItem(SESSION_KEY)) return;
+      shown = true;
+      prevFocus = document.activeElement;
+      overlay.setAttribute('aria-hidden','false');
       document.body.style.overflow = 'hidden';
+      startTimer();
+      document.addEventListener('keydown', onKeyDown);
+      // focus CTA for convenience
+      setTimeout(() => { if (ctaBtn) ctaBtn.focus(); }, 80);
     }
 
-    function hidePopup() {
-      overlay.classList.remove('active');
+    function hidePopup(dismiss = false) {
+      shown = false;
+      overlay.setAttribute('aria-hidden','true');
       document.body.style.overflow = '';
-      clearTimeout(popupTimerInterval);
+      clearTimeout(timerId);
+      document.removeEventListener('keydown', onKeyDown);
+      if (dismiss) sessionStorage.setItem(SESSION_KEY, '1');
+      if (prevFocus && typeof prevFocus.focus === 'function') prevFocus.focus();
     }
 
-    document.addEventListener('mouseleave', function (e) {
-      if (e.clientY <= 0) showPopup();
-    });
-
+    // Exit-intent (mouse leaves top) and scroll gesture (fast scroll up)
+    document.addEventListener('mouseleave', function (e) { if (e.clientY <= 0) showPopup(); });
     let lastScrollY = window.scrollY;
-    window.addEventListener('scroll', function () {
-      const delta = lastScrollY - window.scrollY;
-      if (delta > 80 && window.scrollY < 300) showPopup();
-      lastScrollY = window.scrollY;
-    });
+    window.addEventListener('scroll', function () { const delta = lastScrollY - window.scrollY; if (delta > 80 && window.scrollY < 300) showPopup(); lastScrollY = window.scrollY; });
 
-    closeBtn.addEventListener('click', hidePopup);
-    declineBtn.addEventListener('click', hidePopup);
-    overlay.addEventListener('click', function (e) {
-      if (e.target === overlay) hidePopup();
-    });
+    // Click handlers
+    if (closeBtn) closeBtn.addEventListener('click', function () { hidePopup(true); });
+    if (declineBtn) declineBtn.addEventListener('click', function (e) { e.preventDefault(); hidePopup(true); });
+    if (ctaBtn) ctaBtn.addEventListener('click', function () { sessionStorage.setItem(SESSION_KEY, '1'); hidePopup(false); });
+
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) hidePopup(true); });
   })();
 </script>
 
 </body>
 </html>
+
